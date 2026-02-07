@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Management App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ============================================
+       HEADER SECTION
+       ============================================ -->
+  <header class="header">
+    <div class="container">
+      <h1 class="header__title">Task Manager</h1>
+      <p class="header__subtitle">Organize your tasks efficiently</p>
+    </div>
+  </header>
+
+  <!-- ============================================
+       MAIN CONTENT CONTAINER
+       ============================================ -->
+  <main class="container main">
+    <!-- ============================================
+         LEFT SECTION: ADD TASK FORM
+         ============================================ -->
+    <section class="form-section">
+      <div class="card">
+        <h2 class="card__title">Add New Task</h2>
+        
+        <!-- Add Task Form -->
+        <form id="taskForm" class="form">
+          <!-- Title Input -->
+          <div class="form__group">
+            <label for="taskTitle" class="form__label">Task Title *</label>
+            <input 
+              type="text" 
+              id="taskTitle" 
+              name="title" 
+              class="form__input" 
+              placeholder="Enter task title"
+              required
+            >
+            <span class="form__error" id="titleError"></span>
+          </div>
+
+          <!-- Description Input -->
+          <div class="form__group">
+            <label for="taskDescription" class="form__label">Description</label>
+            <textarea 
+              id="taskDescription" 
+              name="description" 
+              class="form__textarea" 
+              placeholder="Enter task description (optional)"
+              rows="4"
+            ></textarea>
+            <span class="form__error" id="descriptionError"></span>
+          </div>
+
+          <!-- Status Dropdown -->
+          <div class="form__group">
+            <label for="taskStatus" class="form__label">Status</label>
+            <select id="taskStatus" name="status" class="form__select">
+              <option value="pending">Pending</option>
+              <option value="in-progress">In Progress</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn--primary btn--full">
+            <span class="btn__text">Add Task</span>
+            <span class="btn__icon">+</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============================================
+         RIGHT SECTION: TASK LIST
+         ============================================ -->
+    <section class="list-section">
+      <!-- Filter Section -->
+      <div class="card">
+        <div class="filter-bar">
+          <h2 class="filter-bar__title">Tasks</h2>
+          <div class="filter-bar__controls">
+            <button class="filter-btn filter-btn--active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="pending">Pending</button>
+            <button class="filter-btn" data-filter="in-progress">In Progress</button>
+            <button class="filter-btn" data-filter="completed">Completed</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Task List -->
+      <div id="taskList" class="task-list">
+        <!-- Tasks will be dynamically inserted here -->
+        <div class="task-list__empty">
+          <p class="task-list__empty-text">No tasks yet. Create one to get started!</p>
+        </div>
+      </div>
+
+      <!-- Stats Section -->
+      <div class="card stats-card">
+        <div class="stats">
+          <div class="stat">
+            <span class="stat__value" id="statTotal">0</span>
+            <span class="stat__label">Total</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value" id="statPending">0</span>
+            <span class="stat__label">Pending</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value" id="statInProgress">0</span>
+            <span class="stat__label">In Progress</span>
+          </div>
+          <div class="stat">
+            <span class="stat__value" id="statCompleted">0</span>
+            <span class="stat__label">Completed</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================
+       TASK TEMPLATE (Hidden, used for cloning)
+       ============================================ -->
+  <template id="taskTemplate">
+    <div class="card task-card" data-task-id="">
+      <!-- Task Header -->
+      <div class="task-card__header">
+        <div class="task-card__title-section">
+          <h3 class="task-card__title"></h3>
+          <span class="task-card__status"></span>
+        </div>
+        <div class="task-card__actions">
+          <button class="btn-icon btn-icon--edit" title="Edit task">
+            <span>✎</span>
+          </button>
+          <button class="btn-icon btn-icon--delete" title="Delete task">
+            <span>🗑</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Task Description -->
+      <p class="task-card__description"></p>
+
+      <!-- Task Footer (Date & Status Toggle) -->
+      <div class="task-card__footer">
+        <span class="task-card__date"></span>
+        <div class="task-card__status-controls">
+          <select class="task-card__status-select">
+            <option value="pending">Pending</option>
+            <option value="in-progress">In Progress</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__text">&copy; 2026 Task Management App. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Load JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>

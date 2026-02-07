@@ -1,0 +1,39 @@
+# ============================================
+# Git Ignore File - Task Management Backend
+# ============================================
+# Prevents sensitive and unnecessary files from being committed to version control
+
+# Environment Variables (NEVER commit .env with passwords)
+.env
+.env.local
+.env.*.local
+
+# Node Package Manager
+node_modules/
+npm-debug.log*
+npm-error.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# IDE and Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-workspace
+
+# OS Generated Files
+Thumbs.db
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Temporary Files
+tmp/
+temp/
+*.tmp
