@@ -1,6 +1,8 @@
-# Task Management Application
+# Task Management Application — Node.js, Express, MySQL
 
-A professional full-stack Task Management web application for creating, viewing, updating, and deleting tasks. Built for robust productivity and seamless user experience.
+A small full-stack practice project for creating, viewing, updating, filtering, and deleting tasks through a REST API and a vanilla JavaScript interface.
+
+> **Demo status:** A public deployment URL has not been verified. Run the backend and frontend locally using the instructions below.
 
 ---
 
@@ -59,7 +61,7 @@ Taskmanagement/
 ## ⚡ Getting Started
 
 ### Prerequisites
-- Node.js (v14+ recommended)
+- Node.js 18 or newer
 - MySQL Server
 
 ### Backend Setup
@@ -119,6 +121,10 @@ POST /api/tasks
 ```
 
 ---
+
+## Current Scope
+
+This is a learning project. The task API uses MySQL and parameterized queries; configure a local database before starting the backend. The backend route module registers the CRUD endpoints documented above. Automated test coverage and a verified public deployment are not currently documented.
 
 ## 💡 Usage Tips
 - Use filters to quickly view tasks by status.
