@@ -1,5 +1,7 @@
 # Task Management Application — Node.js, Express, MySQL
 
+[![CI](https://github.com/suresh294/task-manager/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/suresh294/task-manager/actions/workflows/ci.yml)
+
 A small full-stack practice project for creating, viewing, updating, filtering, and deleting tasks through a REST API and a vanilla JavaScript interface.
 
 > **Demo status:** A public deployment URL has not been verified. Run the backend and frontend locally using the instructions below.
